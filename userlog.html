@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/u1.css">
+	<script type="text/javascript">
+		function validate()
+		{
+			var nm = document.forms["loginform"]["fname"].value;
+			var email = document.forms["loginform"]["email"].value;
+			var pass = document.forms["loginform"]["password"].value;
+			var cpass = document.forms["loginform"]["rpassword"].value;
+			var mobile = document.forms["loginform"]["phno"].value;
+			var atpos = email.indexOf("@");
+			var dotpos = email.lastIndexOf(".");
+			
+
+			if(nm == "" || nm == null)
+			{
+				alert("Name cannot be empty");
+				return false;
+			}
+			
+			else if(pass == "" && pass == null || pass.length <= 1 || pass.length >= 20)
+			{
+				alert("Invalid password");
+				return false;
+			}
+			
+			else
+			{
+				alert("USER LOGIN COMPLETE");
+				return true;
+			}
+
+		}
+	</script>
+</head>
+
+<body>
+	<h1>HEALTHY HEART CAFETERIA</h1>
+	<h2>A CAFETERIA THAT MAKES YOU HOME</h2>
+	<h3>WELCOMES YOU</h3>
+	<h4>KINDLY FILL IN LOGIN DETAILS</h4>
+	
+<form name="loginform" action="userlog.php" onsubmit="return validate()" method="post">
+		NAME
+		<br><input type="text" name="fname" placeholder="Enter name here:-"><br><br>
+		
+		<br><input type="password" name="password" placeholder="Enter-password here:-"><br><br>
+		
+		<input type="submit" value="LOGIN">
+</form>	
+
+</body>
+</html>	

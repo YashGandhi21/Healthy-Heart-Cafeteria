@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/feedback.css">
+
+	<script type="text/javascript">
+		function validate()
+		{
+			var id = document.forms["feed"]["user-id"].value;
+			var cmnts = document.forms["feed"]["comments"].value;
+			var cmp = document.forms["feed"]["complaints"].value;
+						
+
+			if(id == "" || id == null)
+			{
+				alert("User-Id cannot be empty");
+				return false;
+			}
+			else if(cmnts.length > 20)
+			{
+				alert("Too many comments, try to use key words");
+				return false;
+			}
+			else if(cmp.length > 40)
+			{
+				alert("Please keep complaints precise");
+				return false;
+			}
+			else
+			{
+				alert("FEEDBACK IS COMPLETE");
+				return true;
+			}
+
+		}
+	</script>
+</head>
+<body>
+	<h1>HEALTHY HEART CAFETERIA</h1>
+	<h2>A CAFETERIA THAT MAKES YOU HOME</h2><br><br>
+	
+
+	<form name="feed" action="feedback.php" onsubmit="return validate()" method="post">
+		USER-ID 
+		<br><input type="text" name="user-id" placeholder="Enter user-id:-"><br><br>
+		COMMENTS
+		<br><textarea name="comments" rows="5" cols="40" placeholder="Please let us know your opinion:-"></textarea><br><br>
+		COMPLAINTS
+		<br><textarea name="complaints" rows="5" cols="40" placeholder="Please let us know our improvements:-"></textarea><br><br>
+				
+		<input type="submit" value="SUBMIT">
+	</form>
+
+</body>
+</html>
